@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthsary Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- LOGIN CARD -->
+    <div class="card" id="loginCard">
+      <h1>Login</h1>
+
+      <form onsubmit="login(); return false;">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="password" id="password" placeholder="Enter password">
+        <button type="submit">Login</button>
+      </form>
+
+      <p class="hint">Password is our aniv/monthsary</p>
+      <p class="error" id="error"></p>
+    </div>
+
+    <!-- MAIL PAGE -->
+    <div id="mailPage">
+      <div class="mail">
+        <!-- Big clickable envelope -->
+        <div class="envelope" id="envelope" onclick="toggleMail()">✉️</div>
+
+        <!-- Heart in middle of mailbox -->
+        <div class="heart" id="heart">❤️</div>
+
+        <!-- Button to open/close mail -->
+        <button id="toggleMail" onclick="toggleMail()">Open Mail 💌</button>
+
+        <!-- Letter hidden by default -->
+        <div class="letter hidden" id="letter">
+          <p>
+            Happy Monthsary Habibti ❤️ first of all.<br><br>
+
+            Thank you — we still have a lot to learn about each other, but I’m so glad that we’ve come this far already.
+            I’m hoping that mas kayanin pa po natin yung mga pagsubok in the future.<br><br>
+
+            Thank you for staying with me. I know that I’m making things tough for you,
+            and I promise to make more progress and fix all the bad things about myself,
+            especially my actions these past few days.<br><br>
+
+            Thank you sa walang sawang patience mo at sa pag‑iintindi mo.
+            I'm so glad to have you in my life. I love you so much, mahal ko.
+            Thank you because you didn’t give up on us despite everything.<br><br>
+
+            I’m so grateful to have you in my life. I’m very proud of you and how far you’ve come, my Habibti.
+            Nandito lang po ako palagi sa likod or sa side mo, sinusuportahan ka.<br><br>
+
+            Nakakaproud na you already have your own house, bike, and motorcycle.
+            If you’re referring po to the time you mentioned those and I went quiet —
+            it’s because I was thinking about how I can catch up with you.
+            Ayaw kong mahirapan ka sa’kin. Gusto ko sabay tayo.<br><br>
+
+            I want to see you achieve your dreams and be by your side in everything.<br><br>
+
+            Yes, malayo pa yung journey ng buhay ko/natin,
+            pero magiging handa ako — tayo — kapag kasama kita.
+            I believe we will overcome all our pagsubok in life.<br><br>
+
+            I don’t know what the future holds,
+            but I want it with you.
+            I’m serious about my feelings for you.<br><br>
+
+            Mahal na mahal kita, Hanna ❤️
+          </p>
+        </div>
+
+        <!-- Background music -->
+        <audio id="bgMusic" src="your-music-file.mp3" loop></audio>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

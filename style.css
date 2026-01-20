@@ -1,0 +1,157 @@
+/* ---------- Background & Body ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: auto;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Container ---------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Login Card ---------- */
+.card {
+  background: rgba(161, 140, 209, 0.85);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover { transform: scale(1.02); }
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #a18cd1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover { background: #8c6ecf; }
+
+h1, h2 { color: #fff; }
+.hint { font-size: 13px; color: #fff; }
+.error { color: #ffdddd; margin-top: 10px; }
+.hidden { display: none; }
+.fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* ---------- Mail Page ---------- */
+#mailPage {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.mail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* Big envelope with flip */
+.envelope {
+  font-size: 200px;
+  cursor: pointer;
+  transition: transform 0.6s;
+  margin-bottom: 25px;
+  transform-style: preserve-3d;
+}
+
+/* Letter box bigger and elegant */
+.letter {
+  margin-top: 20px;
+  background: rgba(161, 140, 209, 0.85); /* same as login form */
+  padding: 35px;
+  border-radius: 20px;
+  width: 500px;
+  font-size: 20px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Heart in middle of mailbox */
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 80px;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none;
+  opacity: 0.5; /* visible before opening */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 2; /* above envelope */
+}
+
+/* When mail is open: heart floats behind letter */
+.mail.open .heart {
+  opacity: 0.25;
+  z-index: 1; /* behind letter */
+  animation: floatHeart 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatHeart {
+  0% { transform: translate(-50%, -50%) scale(1) translateY(0px); }
+  50% { transform: translate(-50%, -50%) scale(1.1) translateY(-10px); }
+  100% { transform: translate(-50%, -50%) scale(1) translateY(0px); }
+}
+
+/* Floating mini hearts */
+.mini-heart {
+  position: absolute;
+  font-size: 25px;
+  color: #ff4d6d;
+  opacity: 0.8;
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
+  z-index: 6;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0px) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+}
